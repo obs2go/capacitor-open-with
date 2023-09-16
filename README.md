@@ -5,7 +5,7 @@ This is a capacitor plugin that allows the user to open a specific file using th
 ## Install
 
 ```bash
-npm install obs2go-open-with
+npm install https://github.com/obs2go/capacitor-open-with
 npx cap sync
 ```
 
