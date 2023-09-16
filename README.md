@@ -1,6 +1,6 @@
 # obs2go-open-with
 
-Open with prompt for local files
+This is a capacitor plugin that allows the user to open a specific file using their preferred application on the device.
 
 ## Install
 
