@@ -1,38 +1,23 @@
 package app.obserp2go.com.plugin;
 
-import android.util.Log;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 
 public class OpenWith {
 
-    public String echo(String value) {
-        Log.i("Echo", value);
-        return value;
+    private Context context;
+
+    public OpenWith(Context context) {
+        this.context = context;
     }
 
-    @PluginMethod
-    public void openWith(PluginCall call) {
-        String path = call.getString("path");
-        if (path == null) {
-            call.reject("Path is required");
-            return;
-        }
-
-        File file = new File(path);
-        if (!file.exists()) {
-            call.reject("File does not exist");
-            return;
-        }
-
+    public void openFile(String path) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        Uri uri = FileProvider.getUriForFile(getContext(), getContext().getPackageName() + ".fileprovider", file);
-        intent.setDataAndType(uri, "application/*");
-        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        Uri uri = Uri.parse(path);
+        intent.setDataAndType(uri, "*/*");
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-        try {
-            getContext().startActivity(intent);
-            call.success();
-        } catch (ActivityNotFoundException e) {
-            call.reject("No application found to open the file");
-        }
+        context.startActivity(intent);
     }
 }
