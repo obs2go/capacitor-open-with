@@ -18,7 +18,7 @@ public class OpenWith {
         File file = new File(path);
         Uri fileUri = FileProvider.getUriForFile(
             context,
-            context.getApplicationContext().getPackageName() + ".provider",
+            context.getApplicationContext().getPackageName() + ".fileprovider",
             file
         );
 
