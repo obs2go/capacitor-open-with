@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class OpenWith {
+class OpenWith: NSObject {
 
     var controller: UIDocumentInteractionController?
 
@@ -15,5 +15,9 @@ class OpenWith {
 
 extension OpenWith: UIDocumentInteractionControllerDelegate {
     // Implement any delegate methods if necessary
-}
 
+    // Example:
+    // func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
+    //     return someViewController
+    // }
+}
