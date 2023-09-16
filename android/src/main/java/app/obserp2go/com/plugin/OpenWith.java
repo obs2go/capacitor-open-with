@@ -15,7 +15,9 @@ public class OpenWith {
     }
 
     public void openFile(String path) {
-        File file = new File(path);
+        String filePath = path.replace("file://", "");
+
+        File file = new File(filePath);
         Uri fileUri = FileProvider.getUriForFile(
             context,
             context.getApplicationContext().getPackageName() + ".fileprovider",
