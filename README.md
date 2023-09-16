@@ -66,9 +66,13 @@ export class YorClass {
 
 ## API
 
-<docgen-index></docgen-index>
+<docgen-index>
+openWith
+</docgen-index>
 
 <docgen-api>
 <!-- run docgen to generate docs from the source -->
 <!-- More info: https://github.com/ionic-team/capacitor-docgen -->
+Accepts one parameter: file path
+Example Format: file://storage/emulator/0/....
 </docgen-api>
