@@ -1,18 +1,25 @@
 import Foundation
 import Capacitor
 
-/**
- * Please read the Capacitor iOS Plugin Development Guide
- * here: https://capacitorjs.com/docs/plugins/ios
- */
 @objc(OpenWithPlugin)
 public class OpenWithPlugin: CAPPlugin {
-    private let implementation = OpenWith()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
+    let openWith = OpenWith()
+
+    @objc func openWith(_ call: CAPPluginCall) {
+        guard let path = call.getString("path") else {
+            call.reject("Path is required")
+            return
+        }
+
+        DispatchQueue.main.async {
+            if let viewController = self.bridge?.viewController {
+                self.openWith.openFile(path: path, viewController: viewController)
+                call.resolve(["message": "File opened successfully"])
+            } else {
+                call.reject("Failed to open file")
+            }
+        }
     }
 }
+

@@ -1,8 +1,19 @@
 import Foundation
+import UIKit
 
-@objc public class OpenWith: NSObject {
-    @objc public func echo(_ value: String) -> String {
-        print(value)
-        return value
+class OpenWith {
+
+    var controller: UIDocumentInteractionController?
+
+    func openFile(path: String, viewController: UIViewController) {
+        let fileURL = URL(fileURLWithPath: path)
+        controller = UIDocumentInteractionController(url: fileURL)
+        controller?.delegate = self
+        controller?.presentOptionsMenu(from: viewController.view.bounds, in: viewController.view, animated: true)
     }
 }
+
+extension OpenWith: UIDocumentInteractionControllerDelegate {
+    // Implement any delegate methods if necessary
+}
+
