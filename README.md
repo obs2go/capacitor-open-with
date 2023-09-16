@@ -10,6 +10,7 @@ npx cap sync
 ```
 
 In AndroidMainfest.xml
+```xml
 <application>
  ....
     <provider
@@ -22,9 +23,11 @@ In AndroidMainfest.xml
             android:resource="@xml/file_paths" />
     </provider>
 </application>
+```
 
 In src/main/res/xml/filepaths.xml
 
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <paths xmlns:android="http://schemas.android.com/apk/res/android">
     <external-path name="external_files" path="Download/" />
@@ -33,11 +36,13 @@ In src/main/res/xml/filepaths.xml
     <cache-path name="cache" path="Download/" />
     <external-cache-path name="external_cache" path="Download/" />
 </paths>
+```
 
 Replace "Download/" with "." if applicable
 
 ## Usage 
 
+```javascript
 import { Plugins } from '@capacitor/core';
 
 const { OpenWithPlugin }  = Plugins;
@@ -57,6 +62,7 @@ export class YorClass {
         this.openWith("file://....");
     }
 }
+```
 
 ## API
 
