@@ -42,7 +42,9 @@ In src/main/res/xml/filepaths.xml
 
 Replace "Download/" with "." if applicable
 
-iOS - add /NSPhotoLibraryUsageDescription to Info.plist
+iOS 
+
+Add /NSPhotoLibraryUsageDescription to Info.plist
 
 ## Usage 
 
