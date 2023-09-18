@@ -9,6 +9,8 @@ npm install https://github.com/obs2go/capacitor-open-with
 npx cap sync
 ```
 
+Android
+
 In AndroidMainfest.xml
 ```xml
 <application>
@@ -40,6 +42,8 @@ In src/main/res/xml/filepaths.xml
 
 Replace "Download/" with "." if applicable
 
+iOS - add /NSPhotoLibraryUsageDescription to Info.plist
+
 ## Usage 
 
 ```javascript
@@ -69,6 +73,10 @@ export class YorClass {
 <docgen-index>
 openWith
 </docgen-index>
+
+## Supported Platforms
+
+iOS and Android
 
 <docgen-api>
 <!-- run docgen to generate docs from the source -->
