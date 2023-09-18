@@ -74,13 +74,14 @@ export class YorClass {
 openWith
 </docgen-index>
 
-## Supported Platforms
-
-iOS and Android
-
 <docgen-api>
 <!-- run docgen to generate docs from the source -->
 <!-- More info: https://github.com/ionic-team/capacitor-docgen -->
 Accepts one parameter: file path
 Example Format: file://storage/emulator/0/....
 </docgen-api>
+
+## Supported Platforms
+
+iOS and Android
+
