@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "typeRoots": ["node_modules/@types", "node_modules/obs2go_open_with"],
+    "types": ["obs2go_open_with"],
     "allowUnreachableCode": false,
     "declaration": true,
     "esModuleInterop": true,
